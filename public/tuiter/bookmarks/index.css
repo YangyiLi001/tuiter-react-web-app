@@ -35,13 +35,10 @@ h3{
 }
 
 .wd-cdefg{
-    /*width: 506px;*/
+    width: 506px;
     margin-left: 12px;
 }
 
-.wd-content{
-    width: 506px;
-}
 .wd-avatar{
     border-radius: 48px;
     width: 100px;
