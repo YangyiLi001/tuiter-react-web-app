@@ -26,22 +26,21 @@ h3{
 
 
 .wd-bcdefg{
-    display: flex;
-    margin-top: 12px;
-    /*justify-content: space-between;*/
+    display: inline-flex;
+    justify-content: space-between;
     border: rgb(47,51,54) 1px solid;
     padding: 12px;
 
 }
 
-.wd-cdefg{
-    width: 506px;
-    margin-left: 12px;
-}
+/*.wd-cdefg{*/
+/*    width: 100%;*/
+/*    margin-left: 12px;*/
+/*}*/
 
 .wd-avatar{
     border-left: 16px;
-    border-radius: 80px;
+    border-radius: 100px;
     width: 48px;
     height: 48px;
 
@@ -55,14 +54,14 @@ h3{
 
 .wd-ef {
     margin-top: 12px;
-    width: 506px;
+    width: 100%;
     border-radius: 15px;
     border: 1px solid lightgray;
 }
 
 .wd-ef .wd-content-image{
     height:264px;
-    width:506px;
+    width:100%;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
     border: 1px lightgray solid;
@@ -82,9 +81,9 @@ h3{
 
 .wd-g {
     margin-top: 12px;
-    width: 506px;
+    width: 100%;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     padding-right: 12px;
 }
 

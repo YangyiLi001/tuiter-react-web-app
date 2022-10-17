@@ -1,6 +1,6 @@
-const TweetNumber = (number) => {
-    if (typeof number != "undefined"){
-        return number
+const checkContent = (content) => {
+    if (typeof content != "undefined"){
+        return content
     }
     else {
         return ""
@@ -8,20 +8,21 @@ const TweetNumber = (number) => {
 }
 
 const PostItem = (Post) => {
-
-
     return(`
-    <div class="wd-bcdefg">
-    <img class="wd-avatar" src="${Post.avatarIcon}">
-    <div class="wd-cdefg">
+    <div class="row wd-bcdefg">
+    <div class="col-2 display:inline">
+        <img class="wd-avatar" src="${Post.avatarIcon}">
+    </div>
+    <div class="col-10 display:inline">
         <span>${Post.userName} <i class="fas fa-check-circle"></i></span>
         <span class="wd-handle">@${Post.handle}  ${Post.time}</span>
         <p>${Post.content}</p>
         <div class="wd-ef">
             <img class="wd-content-image" src="${Post.image}">
             <div class="wd-ef-content">
-                <p class="wd-ef-title">${Post.title}</p>
-                <p class="wd-ef-body">${Post.summary}</p>
+ 
+                <p class="wd-ef-title">${checkContent(Post.title)}</p>
+                <p class="wd-ef-body">${checkContent(Post.summary)}</p>
             </div>
 
         </div>
