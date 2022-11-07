@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import{retuits,replies,likes} from "../tuits-list/tuits-list-reducer"
+import{retuits,replies,likes,deleteTuit} from "../tuits-list/tuits-list-reducer"
 import {useDispatch,useSelector} from "react-redux";
 
 const PostItem = ({post}) => {
@@ -9,6 +9,10 @@ const PostItem = ({post}) => {
     const retuitClickHandler = () => {
         dispatch(retuits(post))
     }
+    const deleteTuitHandler = (id) => {
+        dispatch(deleteTuit(id));
+    }
+
     const repliesClickHandler = () => {
         dispatch(replies(post))
     }
@@ -23,6 +27,8 @@ const PostItem = ({post}) => {
                     <img className="rounded-circle" height={48} src={post.avatarIcon}/>
                 </div>
                 <div className="col-10">
+                    <div><i className="bi bi-x-lg float-end"
+                            onClick={() => deleteTuitHandler(post._id)}></i></div>
                     <div><span className="fw-bolder">{post.userName}</span> {post.handle}. {post.time}</div>
                     <div>{post.tuit}</div>
                     <div style={{display:"flex", justifyContent: 'space-evenly'}}>
@@ -33,6 +39,7 @@ const PostItem = ({post}) => {
                     </div>
 
                 </div>
+
             </div>
         </li>
     );

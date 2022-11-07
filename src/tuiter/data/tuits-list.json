@@ -15,16 +15,16 @@
   },
   {
     "_id": 123,
-    "topic": "xxx",
-    "userName": "xxx",
+    "topic": "tesla",
+    "userName": "Tesla",
     "time": "2h",
-    "title": "100s of SpaceX Starships land on Mars after a 6 month journey. 1000s of Martian colonists being building Mars Base 1",
+    "title": "Tesla is laying off employee",
     "avatarIcon": "../../image/tesla.jpg",
     "liked": false,
     "replies": 1,
     "retuits": 22,
     "likes": 20,
     "handle": "@xxx",
-    "tuit": "Autopiot is an advanced driver assitance system that assist your car with steering accelerating and breaking."
+    "tuit": "Autopilot is an advanced driver assitance system that assist your car with steering accelerating and breaking."
   }
 ]
