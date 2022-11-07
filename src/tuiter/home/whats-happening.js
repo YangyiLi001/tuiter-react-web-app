@@ -3,6 +3,7 @@ import {createTuit} from "../tuits-list/tuits-list-reducer";
 import {useDispatch} from "react-redux";
 const WhatsHappening = () => {
     let [whatsHappening, setWhatsHappening] = useState('');
+
     const dispatch = useDispatch();
 
     const tuitClickHandler = () => {

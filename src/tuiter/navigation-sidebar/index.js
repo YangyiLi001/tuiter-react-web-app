@@ -8,8 +8,8 @@ const NavigationSidebar = () => {
     return(
         <div className="list-group">
             <a className="list-group-item">Tuiter</a>
-            <Link to="/tuiter/home" className={`list-group-item
-                    ${active === 'home'?'active':''}`}>
+            <Link to="/tuiter/homescreen" className={`list-group-item
+                    ${active === 'homescreen'?'active':''}`}>
                 Home
             </Link>
             <Link to="/tuiter/explorescreen" className={`list-group-item
@@ -32,8 +32,8 @@ const NavigationSidebar = () => {
                     ${active === 'lists'?'active':''}`}>
                 Lists
             </Link>
-            <Link to="/tuiter/profile" className={`list-group-item
-                    ${active === 'profile'?'active':''}`}>
+            <Link to="/tuiter/profilescreen" className={`list-group-item
+                    ${active === 'profilescreen'?'active':''}`}>
                 Profile
             </Link>
             <Link to="/tuiter/more" className={`list-group-item

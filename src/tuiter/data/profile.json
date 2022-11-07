@@ -1,0 +1,15 @@
+{
+  "name": "Ellen Xu",
+  "handle": "@ellenxu",
+  "profilePicture": "../../image/bee.jpg",
+  "bannerPicture": "../../image/starship.jpg",
+  "bio": "A fake person for test.",
+  "website": "youtube.com/webdevtv",
+  "location": "Boston, MA",
+  "dateOfBirth": "10/7/1990",
+  "dateJoined": "4/2009",
+  "numberOfTweets": 1000,
+  "followingCount": 340,
+  "followersCount": 223
+}
+
