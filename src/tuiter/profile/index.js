@@ -25,7 +25,7 @@ const ProfileComponent = () => {
                         <img src={profile.profilePicture} className="h-50 rounded-circle card-img-overlay mx-4 my-5 top-50"></img>
 
                     </div>
-                    <Link to="./edit-profile">
+                    <Link to="../editprofile">
                     <button className="rounded-pill btn btn-outline-secondary float-end mt-2 w-20 fw-bold text-black">Edit profile</button></Link>
                 </div>
                 <div className="mt-5 px-3">

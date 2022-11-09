@@ -7,9 +7,16 @@ const profileSlice = createSlice({
         editName(state, action){
             state.name = action.payload
         },
+        editBio(state, action){
+            state.bio = action.payload
+        },
+        editHandle(state, action){
+            state.handle = action.payload
+        },
+
 
     }
     }
-)
-export const{editName} = profileSlice.actions;
-export default profileSlice.reducer;
+);
+export const{editName,editBio,editHandle} = profileSlice.actions
+export default profileSlice.reducer
