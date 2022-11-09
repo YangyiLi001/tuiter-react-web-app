@@ -10,13 +10,18 @@ const profileSlice = createSlice({
         editBio(state, action){
             state.bio = action.payload
         },
-        editHandle(state, action){
-            state.handle = action.payload
+        editLocation(state, action){
+            state.location = action.payload
         },
-
+        editWebsite(state, action){
+            state.website = action.payload
+        },
+        editBdate(state, action){
+            state.dateOfBirth = action.payload
+        },
 
     }
     }
 );
-export const{editName,editBio,editHandle} = profileSlice.actions
+export const{editName,editBio,editLocation,editWebsite,editBdate} = profileSlice.actions
 export default profileSlice.reducer

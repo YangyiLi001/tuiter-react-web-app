@@ -1,13 +1,15 @@
 import React, {useState} from "react";
 import {useDispatch, useSelector}
     from "react-redux";
-import {editName,editBio,editHandle} from "../profile/profile-reducer"
+import {editName,editBio,editLocation,editWebsite,editBdate} from "../profile/profile-reducer"
 import {Link} from "react-router-dom";
 const EditProfile = () =>{
     const profile = useSelector(state=>state.profile);
     const [newName, setNewName] = useState(profile.name);
     const [newBio, setNewBio] = useState(profile.bio);
-    const [newHandle, setNewHandle] = useState(profile.handle);
+    const [newLocation, setNewLocation] = useState(profile.location);
+    const [newWebsite, setNewWebsite] = useState(profile.website);
+    const [newBdate, setNewBdate] = useState(profile.dateOfBirth);
     const dispatch = useDispatch();
     const editNameHandler = () =>{
         console.log("newName", newName)
@@ -16,8 +18,14 @@ const EditProfile = () =>{
     const editBioHandler = () =>{
         dispatch(editBio(newBio));
     }
-    const editHandleHandler = () =>{
-        dispatch(editHandle(newHandle));
+    const editLocationHandler = () =>{
+        dispatch(editLocation(newLocation));
+    }
+    const editwebsiteHandler = () =>{
+        dispatch(editWebsite(newWebsite));
+    }
+    const editBdateHandler = () =>{
+        dispatch(editBdate(newBdate));
     }
 
     return(
@@ -54,12 +62,12 @@ const EditProfile = () =>{
                     </div>
 
                 <div className="text-secondary small">
-                    <textarea value={newHandle}
-                                                                onChange={(event) => setNewHandle(event.target.value)}>
+                    <textarea value={newWebsite}
+                                                                onChange={(event) => setNewWebsite(event.target.value)}>
                     </textarea>
 
                     <button className="rounded-pill btn btn-primary float-end mt-2 ps-3 pe-3 fw-bold"
-                            onClick={editHandleHandler}>
+                            onClick={editwebsiteHandler}>
                         save
                     </button>
                 </div>
@@ -75,20 +83,26 @@ const EditProfile = () =>{
 
                 </div>
             </div>
-            <div className="row px-3 pb-1 bt-0">
-                <div className="col-4 small text-secondary"><i className="bi bi-geo-alt text-secondary pe-2"></i>{profile.location}</div>
-                <div className="col-4 small text-secondary"><i className="bi bi-balloon text-secondary pe-2"></i>Born {profile.dateOfBirth}</div>
-                <div className="col-4 small text-secondary"><i className="bi bi-calendar3 text-secondary pe-2"></i>Joined {profile.dateJoined}</div>
-            </div>
-            <div className="row px-3">
-                <div className="col-3">
-                    <span className="fw-bold small">{profile.followingCount}</span><span className="ps-1 text-secondary small">Following</span>
-                </div>
-                <div className="col-9">
-                    <span className="fw-bold small">{profile.followersCount}</span><span className="ps-1 text-secondary small">Followers</span>
-                </div>
+            <div className="small pt-2"><i className="bi bi-geo-alt text-secondary pe-2"></i>
+            <textarea value={newLocation}
+                      onChange={(event) => setNewLocation(event.target.value)}>
+            </textarea>
 
-            </div>
+            <button className="rounded-pill btn btn-primary float-end mt-2 ps-3 pe-3 fw-bold"
+                    onClick={editLocationHandler}>
+                save
+            </button></div>
+                <div className="small pt-2"><i className="bi bi-balloon text-secondary pe-2"></i>
+                    <textarea value={newBdate}
+                              onChange={(event) => setNewBdate(event.target.value)}>
+            </textarea>
+
+                    <button className="rounded-pill btn btn-primary float-end mt-2 ps-3 pe-3 fw-bold"
+                            onClick={editBdateHandler}>
+                        save
+                    </button></div>
+
+
 
         </div>
         </div>
