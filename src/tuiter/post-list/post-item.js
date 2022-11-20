@@ -19,8 +19,15 @@ const PostItem = ({post}) => {
     const repliesClickHandler = () => {
         dispatch(replies(post))
     }
+    // const likesClickHandler = () => {
+    //     dispatch(likes(post))
+    // }
     const likesClickHandler = () => {
-        dispatch(likes(post))
+        dispatch(updateTuitThunk({
+            ...post,
+            likes: post.likes + 1,
+            liked: true
+            }))
     }
 // const PostItem = () => {
 //     const dispatch = useDispatch();

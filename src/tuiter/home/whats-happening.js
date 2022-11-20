@@ -2,6 +2,8 @@ import React, {useState} from "react";
 // import {createTuit} from "../tuits-list/tuits-list-reducer";
 import {createTuitThunk}
     from "../../services/tuits-thunks";
+import {currentUser, templateTuit}
+    from "../tuits-list/tuits-list-reducer";
 
 import {useDispatch} from "react-redux";
 const WhatsHappening = () => {
@@ -12,6 +14,7 @@ const WhatsHappening = () => {
     const tuitClickHandler = () => {
         console.log(whatsHappening);
         const newTuit = {
+            ...templateTuit,
             tuit: whatsHappening
         }
         //a8 update frm createTuit to createTuitThunk

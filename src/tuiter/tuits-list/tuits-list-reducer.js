@@ -5,13 +5,13 @@ import tuits from '../data/tuits-list.json';
 import {findTuitsThunk,deleteTuitThunk,createTuitThunk,updateTuitThunk}
     from "../../services/tuits-thunks";
 
-const currentUser = {
+export const currentUser = {
     "userName": "NASA",
     "handle": "@nasa",
-    "avatarIcon": "../../image/nasa.png",
+    "image": "../image/nasa.png",
 };
 
-const templateTuit = {
+export const templateTuit = {
     ...currentUser,
     "topic": "Space",
     "time": "2h",

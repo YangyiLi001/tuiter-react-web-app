@@ -1,12 +1,14 @@
 //implementing all tuits related HTTP communication
 import axios from 'axios';
 // const TUITS_API = 'http://localhost:4000/api/tuits';
-// const TUITS_API = 'https://tuiter-node-server-app-yangyil.herokuapp.com/';
+// const TUITS_API = 'https://tuiter-node-server-app-yangyil.herokuapp.com/api/tuits';
 const API_BASE = process.env.REACT_APP_API_BASE;
+console.log("APT_BASE",API_BASE)
 const TUITS_API = `${API_BASE}/tuits`;
 
 export const createTuit = async (tuit) => {
     const response = await axios.post(TUITS_API, tuit)
+    console.log("create tuit", response);
     return response.data;
 }
 
@@ -28,6 +30,7 @@ export const deleteTuit = async (tid) => {
 export const updateTuit = async (tuit) => {
     const response = await axios
         .put(`${TUITS_API}/${tuit._id}`, tuit);
+    console.log("updateTuit", response)
     return tuit;
 }
 
