@@ -6,7 +6,7 @@ import {findTuitsThunk,deleteTuitThunk,createTuitThunk,updateTuitThunk}
     from "../../services/tuits-thunks";
 
 export const currentUser = {
-    "userName": "NASA",
+    "username": "NASA",
     "handle": "@nasa",
     "image": "../image/nasa.png",
 };

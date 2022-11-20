@@ -51,7 +51,7 @@ const PostItem = ({post}) => {
                 <div className="col-10">
                     <div><i className="bi bi-x-lg float-end"
                             onClick={() => deleteTuitHandler(post._id)}></i></div>
-                    <div><span className="fw-bolder">{post.userName}</span> {post.handle}. {post.time}</div>
+                    <div><span className="fw-bolder">{post.username}</span> {post.handle}. {post.time}</div>
                     <div>{post.tuit}</div>
                     <div style={{display:"flex", justifyContent: 'space-evenly'}}>
                         <span><i onClick={repliesClickHandler}className="bi bi-chat"></i> {post.replies}</span>
