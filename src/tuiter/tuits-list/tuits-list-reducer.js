@@ -19,6 +19,8 @@ export const templateTuit = {
     "replies": 0,
     "retuits": 0,
     "likes": 0,
+    "dislikes":0,
+    "disliked":false,
 }
 // a8 added
 const initialState = {
@@ -72,30 +74,30 @@ const tuitsListSlice = createSlice({
         },
 
         reducers: {
-            deleteTuit(state, action) {
-                const index = state
-                    .findIndex(tuit =>
-                        tuit._id === action.payload);
-                state.splice(index, 1);
-            },
-
-            createTuit(state, action) {
-                state.unshift({
-                    ...action.payload,
-                    ...templateTuit,
-                    _id: (new Date()).getTime(),
-                })
-            },
-
-            likes(state, action){
-                const tuit = state.find((tuit) => tuit._id === action.payload._id)
-                    if(tuit.liked === false){
-                    tuit.liked = true;
-                    tuit.likes = tuit.likes+1
-                    }else{
-                        tuit.liked = false;
-                        tuit.stats.likes--;
-              }},
+            // deleteTuit(state, action) {
+            //     const index = state
+            //         .findIndex(tuit =>
+            //             tuit._id === action.payload);
+            //     state.splice(index, 1);
+            // },
+            //
+            // createTuit(state, action) {
+            //     state.unshift({
+            //         ...action.payload,
+            //         ...templateTuit,
+            //         _id: (new Date()).getTime(),
+            //     })
+            // },
+            //
+            // likes(state, action){
+            //     const tuit = state.find((tuit) => tuit._id === action.payload._id)
+            //         if(tuit.liked === false){
+            //         tuit.liked = true;
+            //         tuit.likes = tuit.likes+1
+            //         }else{
+            //             tuit.liked = false;
+            //             tuit.stats.likes--;
+            //   }},
             replies(state,action){
                 const tuit = state.find((tuit) => tuit._id === action.payload._id)
                 tuit.replies = tuit.replies+1

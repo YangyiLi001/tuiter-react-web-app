@@ -10,7 +10,6 @@ import {useDispatch, useSelector}
 const PostSummaryList = () => {
     //tuitsList = tuitsData in assignment
     const {tuits, loading} = useSelector(state => state.tuitsData)
-    console.log(tuits)
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(findTuitsThunk())
@@ -32,5 +31,5 @@ const PostSummaryList = () => {
         </ul>
     );
 };
-//PostSummaryList=TuitsList in assignment
+
 export default PostSummaryList;

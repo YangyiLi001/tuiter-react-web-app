@@ -2,7 +2,7 @@ import React, {useState} from "react";
 // import {createTuit} from "../tuits-list/tuits-list-reducer";
 import {createTuitThunk}
     from "../../services/tuits-thunks";
-import {currentUser, templateTuit}
+import {templateTuit}
     from "../tuits-list/tuits-list-reducer";
 
 import {useDispatch} from "react-redux";

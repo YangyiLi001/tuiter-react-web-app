@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import{retuits,replies,likes,deleteTuit} from "../tuits-list/tuits-list-reducer"
+import{retuits,replies} from "../tuits-list/tuits-list-reducer"
 import {deleteTuitThunk,updateTuitThunk} from "../../services/tuits-thunks";
 import {useDispatch,useSelector} from "react-redux";
 
@@ -8,9 +8,7 @@ const PostItem = ({post}) => {
     const retuitClickHandler = () => {
         dispatch(retuits(post))
     }
-    // const deleteTuitHandler = (id) => {
-    //     dispatch(deleteTuit(id));
-    // }
+
     const deleteTuitHandler = (id) => {
         dispatch(deleteTuitThunk(id));
     }
@@ -19,9 +17,7 @@ const PostItem = ({post}) => {
     const repliesClickHandler = () => {
         dispatch(replies(post))
     }
-    // const likesClickHandler = () => {
-    //     dispatch(likes(post))
-    // }
+
     const likesClickHandler = (id) => {
         dispatch(updateTuitThunk({
             ...post,
@@ -36,11 +32,21 @@ const PostItem = ({post}) => {
             liked: false
         }))
     }
-// const PostItem = () => {
-//     const dispatch = useDispatch();
-//     const deleteTuitHandler = (id) => {
-//         dispatch(deleteTuitThunk(id));
-//     }
+    const dislikesClickHandler = (id) => {
+        dispatch(updateTuitThunk({
+            ...post,
+            dislikes: post.dislikes + 1,
+            disliked: true
+        }))
+    }
+    const undislikesClickHandler = (id) => {
+        dispatch(updateTuitThunk({
+            ...post,
+            dislikes: post.dislikes - 1,
+            disliked: false
+        }))
+    }
+
 
     return(
         <li className="list-group-item">
@@ -60,6 +66,10 @@ const PostItem = ({post}) => {
                         <span>{post.liked && <i onClick={() => {unlikesClickHandler(post._id)}} className="bi bi-heart-fill me-2 text-danger"></i>}
                             {!post.liked && <i onClick={() => {likesClickHandler(post._id)}} className="bi bi-heart me-2"></i>}
                             {post.likes}
+                        </span>
+                        <span>{post.disliked && <i onClick={() => {undislikesClickHandler(post._id)}} className="bi bi-hand-thumbs-down-fill text-dark"></i>}
+                            {!post.disliked && <i onClick={() => {dislikesClickHandler(post._id)}} className="bi bi-hand-thumbs-down"></i>}
+                            {post.dislikes}
                         </span>
 
                         <span><i className="bi bi-download"></i></span>
