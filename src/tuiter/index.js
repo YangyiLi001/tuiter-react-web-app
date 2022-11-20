@@ -15,8 +15,9 @@ import { configureStore }
     from '@reduxjs/toolkit';
 
 import {Provider} from "react-redux";
+//a8 rename tuitsData from tuitsList
 const store = configureStore(
-    {reducer: {who: whoReducer, tuits:tuitsReducer, tuitsList:tuitsListReducer,profile:profileReducer}});
+    {reducer: {who: whoReducer, tuits:tuitsReducer, tuitsData:tuitsListReducer,profile:profileReducer}});
 
 function Tuiter() {
     return(
