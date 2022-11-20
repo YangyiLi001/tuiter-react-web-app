@@ -22,12 +22,19 @@ const PostItem = ({post}) => {
     // const likesClickHandler = () => {
     //     dispatch(likes(post))
     // }
-    const likesClickHandler = () => {
+    const likesClickHandler = (id) => {
         dispatch(updateTuitThunk({
             ...post,
             likes: post.likes + 1,
             liked: true
             }))
+    }
+    const unlikesClickHandler = (id) => {
+        dispatch(updateTuitThunk({
+            ...post,
+            likes: post.likes - 1,
+            liked: false
+        }))
     }
 // const PostItem = () => {
 //     const dispatch = useDispatch();
@@ -49,13 +56,11 @@ const PostItem = ({post}) => {
                     <div style={{display:"flex", justifyContent: 'space-evenly'}}>
                         <span><i onClick={repliesClickHandler}className="bi bi-chat"></i> {post.replies}</span>
                         <span><i onClick={retuitClickHandler} className="bi bi-repeat"></i>{post.retuits} </span>
-                        <span><i onClick={likesClickHandler} className="bi bi-heart"></i> {post.likes}</span>
-                        {/*<span>*/}
-                        {/*Likes: {post.likes}*/}
-                        {/*<i onClick={() => dispatch(updateTuitThunk({*/}
-                        {/*    ...post,*/}
-                        {/*    likes: post.likes + 1*/}
-                        {/*})} className="bi bi-heart-fill me-2 text-danger"></i></span>*/}
+                        {/*<span><i onClick={likesClickHandler} className="bi bi-heart"></i> {post.likes}</span>*/}
+                        <span>{post.liked && <i onClick={() => {unlikesClickHandler(post._id)}} className="bi bi-heart-fill me-2 text-danger"></i>}
+                            {!post.liked && <i onClick={() => {likesClickHandler(post._id)}} className="bi bi-heart me-2"></i>}
+                            {post.likes}
+                        </span>
 
                         <span><i className="bi bi-download"></i></span>
                     </div>
